@@ -11,3 +11,12 @@
 !/results_folder/info_dir/best_predictors.csv
 !/results_folder/info_dir/test_predictors.csv
 !/results_folder/info_dir/cells_selection.csv
+# compiled Python and OS files, anywhere in the tree
+__pycache__/
+*.pyc
+.DS_Store
+.ipynb_checkpoints/
+
+# analysis outputs and preprocessed data: generated locally, never committed
+/results_folder/analysis_dir/*
+*.pkl

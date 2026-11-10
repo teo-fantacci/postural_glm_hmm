@@ -1,0 +1,9 @@
+# pip alternative to environment.yml (Python 3.9), same versions.
+# Then install the bundled ssm (see README): cd ssm && pip install -e .
+# ssm brings in its own dependencies (autograd, numba, scikit-learn, seaborn, pandas, tqdm).
+matplotlib==3.3.4
+numpy==1.23.3
+scipy==1.9.1
+jupyter==1.0.0
+jupyterlab==3.4.4
+cython
