@@ -16,3 +16,7 @@ __pycache__/
 *.pyc
 .DS_Store
 .ipynb_checkpoints/
+
+# analysis outputs and preprocessed data: generated locally, never committed
+/results_folder/analysis_dir/*
+*.pkl

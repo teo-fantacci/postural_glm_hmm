@@ -1,10 +1,11 @@
 # postural_glm_hmm: multi-state GLMs of neural activity with 3D postural predictors
 
-Code I wrote in 2022 in the [Whitlock group](https://github.com/Whitlock-Group) at the Kavli
-Institute for Systems Neuroscience, NTNU (Trondheim), as paid work for the group. It bridges the
-group's postural pipeline (3D motion capture of freely moving rats) with a state-space model, so
-that single-neuron activity from Neuropixels recordings can be explained by time-varying 3D posture
-and movement predictors.
+Code I wrote as a full-time research assistant in the Whitlock lab (Prof. Jonathan Whitlock;
+[Whitlock-Group on GitHub](https://github.com/Whitlock-Group)) at the Kavli Institute for Systems
+Neuroscience, NTNU, Trondheim (2021–2022), as paid work for the lab. It bridges the lab's postural
+pipeline (preprocessed 3D pose tracking of freely moving rats) with a state-space model, so that
+single-neuron activity from Neuropixels recordings can be explained by time-varying 3D posture and
+movement predictors.
 
 **Status:** beta. Tested on Windows 10 with Python 3.9.
 
@@ -28,14 +29,15 @@ Linderman's [`ssm`](https://github.com/lindermanlab/ssm) with expectation-maximi
 | `plots_loading_notebook.ipynb` | Load processed results and make the plots |
 | `ssm/` | Bundled copy of Linderman's `ssm` (MIT, see `ssm/LICENSE`) |
 | `ratemaps/` | Copy of the Whitlock group's [RateMap](https://github.com/Whitlock-Group/RateMap) package (BSD-3-Clause, see `ratemaps/LICENSE`) |
-| `spikestats/` | Helpers to read sessions and compute spike statistics |
+| `spikestats/` | Helpers to read sessions and compute spike statistics; a few input-validation and GLM helpers come from statsmodels and pyglmnet (see `spikestats/THIRD_PARTY_NOTICES.md`) |
 | `additional_details.txt` | Model constraints and theory references |
 
 ## Data requirements
 
 The input is one `.mat` file per session exported by the Whitlock group's postural pipeline GUI,
 holding the spike times, the tracking timestamps and frame rate, and the 3D postural variables.
-These recordings are not part of this repository; they belong to the Whitlock group.
+These recordings, and the results computed from them, are not part of this repository; they belong to
+the Whitlock lab. Results are written to `results_folder/analysis_dir/`, which git ignores.
 
 ## Installation
 
@@ -107,4 +109,5 @@ More detail, including the constraints between options, is in `additional_detail
 ## License
 
 See [`LICENSE.md`](LICENSE.md). The bundled third-party code keeps its own license: `ssm/` (MIT,
-Scott Linderman) and `ratemaps/` (BSD-3-Clause, Jingyi G. Fuglstad, Whitlock group).
+Scott Linderman), `ratemaps/` (BSD-3-Clause, Jingyi G. Fuglstad, Whitlock lab), and the helpers
+listed in `spikestats/THIRD_PARTY_NOTICES.md` (statsmodels, BSD-3-Clause; pyglmnet, MIT).
